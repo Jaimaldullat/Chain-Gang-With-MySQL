@@ -1,7 +1,18 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: James Dullat
- * Date: 2019-03-20
- * Time: 1:54 PM
- */
+
+<main>
+    <nav id="main-nav">
+        <ul>
+            <li>
+                <a href="bicycles.php" class="">View Our Inventory</a>
+                <!-- /. -->
+            </li>
+            <li>
+                <a href="about.php" class="">About Us</a>
+                <!-- /. -->
+            </li>
+        </ul>
+    </nav>
+    <article id="main-image">
+        <img class="big-cycles-img" src="images/AdobeStock_18040381_xlarge.jpeg" alt="Cycles Image">
+    </article>
+</main>
