@@ -5,7 +5,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Chain Gang</title>
+    <title>Chain Gang <?php if(isset($page_title)) { echo "- ". $page_title; } ?></title>
     <link rel="stylesheet" href="stylesheets/main.css">
 </head>
 <body>

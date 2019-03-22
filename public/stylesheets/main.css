@@ -21,7 +21,9 @@ html, body, body * {
 *::after {
     box-sizing: inherit;
 }
-
+table, th, td {
+    border: 1px solid black;
+}
 /*************************
         HEADER
 **************************/
@@ -91,6 +93,65 @@ nav#main-nav ul li a {
     height: auto;
 }
 
+/*************************
+        ABOUT
+**************************/
+article#about-article {
+    padding: 10px;
+    width: 50%;
+    margin: 0 auto;
+}
+article#about-article header h1 {
+    font-size: 2.5rem;
+}
+.about-big-image {
+    width: 100%;
+    height: auto;
+}
+/*************************
+        BICYCLES ( INVENTORY )
+**************************/
+
+article#inventory-article {
+    width: 70%;
+    margin: 0 auto;
+}
+
+section.intro-section {
+    display: flex;
+}
+
+section.intro-section .intro-img img {
+    height: 120px;
+    width: auto;
+}
+
+section.intro-section .intro-desc {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 5px;
+}
+
+.intro-desc .flex-item {
+    margin: 0;
+    margin-left: 20px;
+}
+
+section.inventory-section .inventory-table {
+    width: 100%;
+    text-align: left;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+.inventory-table th {
+    background-color: #aaa;
+    color: #fff;
+    font-weight: bold;
+}
+.inventory-table th, .inventory-table td {
+    padding: 5px;
+}
 /*************************
         FOOTER
 **************************/
