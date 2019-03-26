@@ -153,8 +153,44 @@ section.inventory-section .inventory-table {
     padding: 5px;
 }
 /*************************
-        FOOTER
+        DETAIL
 **************************/
+main#detail-main {
+    padding: 30px;
+}
+
+main#detail-main > a{
+    margin-left: 40px;
+}
+
+section#detail-section {
+    padding-top: 25px;
+}
+
+ul.detail {
+    list-style: none;
+}
+
+ul.detail li {
+    margin:  15px 0;
+}
+
+ul.detail li div:first-child {
+    font-weight: bold;
+    display: inline-block;
+    width: 113px;
+
+}
+ul.detail li div:first-child::after {
+    content: ':';
+}
+ul.detail li div:last-child {
+
+    display: inline-block;
+}
+    /*************************
+            FOOTER
+    **************************/
 footer#footer {
     margin: 30px 0;
 }

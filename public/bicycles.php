@@ -28,25 +28,26 @@
                         <th>Weight</th>
                         <th>Condition</th>
                         <th>Price</th>
+                        <th></th>
                     </tr>
                     <?php
-                    $sql = "SELECT * FROM bicycles";
-                    $result = $database->query($sql);
+                   $bikes = Bicycle::find_all();
                     ?>
 
-                    <?php while ($row = $result->fetch_assoc()): ?>
+                    <?php foreach($bikes as $bike): ?>
                         <tr>
-                            <td>Data</td>
-                            <td>Data</td>
-                            <td>Data</td>
-                            <td>Data</td>
-                            <td>Data</td>
-                            <td>Data</td>
-                            <td>Data</td>
-                            <td>Data</td>
-                            <td>Data</td>
+                            <td><?php echo h($bike->brand); ?></td>
+                            <td><?php echo h($bike->model); ?></td>
+                            <td><?php echo h($bike->year); ?></td>
+                            <td><?php echo h($bike->category); ?></td>
+                            <td><?php echo h($bike->gender); ?></td>
+                            <td><?php echo h($bike->color); ?></td>
+                            <td><?php echo h($bike->weight_kg()); ?></td>
+                            <td><?php echo h($bike->condition()); ?></td>
+                            <td><?php echo h($bike->price); ?></td>
+                            <td><a href="detail.php?id=<?php echo h($bike->id);  ?>">View</a> </td>
                         </tr>
-                    <?php endwhile; ?>
+                    <?php endforeach; ?>
                     </tbody>
                 </table>
             </section>

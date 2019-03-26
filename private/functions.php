@@ -12,4 +12,13 @@ function u($string="") {
     return urlencode($string);
 }
 
+function h($string="") {
+    return htmlspecialchars($string);
+}
+
+function redirect_to($location) {
+    header("Location: " . $location);
+    exit;
+}
+
 ?>
