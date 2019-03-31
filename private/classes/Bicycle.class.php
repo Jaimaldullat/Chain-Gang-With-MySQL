@@ -84,7 +84,27 @@ class Bicycle
     // Update bicycle record
     public function update(){
         $attributes = $this->sanitized_attributes();
+        $attributes_pair = [];
+        foreach ($attributes as $key=>$value){
+            $attributes_pair[] = "{$key}='{$value}'";
+        }
 
+        $sql = "UPDATE bicycles SET ";
+        $sql .= join(', ',$attributes_pair);
+        $sql .= " WHERE id='" . self::$database->escape_string($this->id) ."'";
+        $sql .= " LIMIT 1";
+        $result = self::$database->query($sql);
+        return $result;
+
+    }
+
+    public function save(){
+        // New record doesn't have id
+        if(isset($this->id)) {
+            return $this->update();
+        }else {
+            return $this->create();
+        }
     }
     // Properties which have database columns, excluding id
     public function attributes()

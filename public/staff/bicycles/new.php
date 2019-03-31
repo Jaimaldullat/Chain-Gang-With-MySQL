@@ -5,7 +5,7 @@ if(is_post_request()){
 
     $args = $_POST['bicycle'];
     $bicycle = new Bicycle($args);
-    $result = $bicycle->create();
+    $result = $bicycle->save();
     if($result === true) {
         $new_id = $bicycle->id;
         $_SESSION['message'] = 'The bicycle was created successfully.';
@@ -30,7 +30,7 @@ if(is_post_request()){
         <h2>Add Bicycle</h2>
         <article id="add-bicycle-article">
             <section class="add-bicycle-section">
-                <form method="POST">
+                <form method="POST"  action="<?php echo $_SERVER['PHP_SELF']; ?>">
 
                     <?php include_once "form_fields.php"; ?>
 

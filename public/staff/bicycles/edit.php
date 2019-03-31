@@ -4,14 +4,27 @@
     redirect_to('/staff/bicycles/index.php');
 }
 $id = $_GET['id'];
-
+$bicycle = Bicycle::find_by_id($id);
+if($bicycle == false){
+    redirect_to("/staff/bicycles/index.php");
+}
+// When form is submitted
 if(is_post_request()){
 
-}else {
-    $bicycle = Bicycle::find_by_id($id);
-    if($bicycle == false){
-        redirect_to("/staff/bicycles/index.php");
+    $args = $_POST['bicycle'];
+    $args['id'] = $id;
+    $bicycle = new Bicycle($args);
+    $result = $bicycle->save();
+    if($result === true) {
+        $new_id = $id;
+        $_SESSION['message'] = 'The bicycle was updated successfully.';
+        redirect_to(url_for('/staff/bicycles/show.php?id=' . $new_id));
+    } else {
+        // show errors
     }
+}else {
+
+// Display form
 }
 
 ?>
@@ -26,7 +39,7 @@ if(is_post_request()){
         <h2>Edit Bicycle</h2>
         <article id="edit-bicycle-article">
             <section class="edit-bicycle-section">
-                <form method="post">
+                <form method="post" action="<?php echo $_SERVER['PHP_SELF'] . "?id=" . $id; ?>">
 
                     <?php include_once "form_fields.php"; ?>
 
