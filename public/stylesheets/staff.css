@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i');
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+body {
+    position: relative;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    font-style: normal;
+    display: flex;
+    flex-direction: column;
+}
+
+html, body, body * {
+    box-sizing: border-box;
+}
+
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+div#message {
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: green;
+}
+/*************************
+        HEADER
+**************************/
+
+header#staff-header {
+    padding: 7px;
+    background: #E68364;
+}
+
+header#staff-header h1 {
+    text-align: center;
+    text-shadow: 3px 3px 0px #555;
+    letter-spacing: 1px;
+}
+
+/*************************
+        MAIN MENU
+**************************/
+
+nav#main-nav ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+/*************************
+        MAIN
+**************************/
+main {
+    flex: 1;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 40px;
+}
+
+nav#inner-menu ul {
+    list-style: none;
+}
+
+
+
+/******** COMMON FORM ********/
+
+
+.form-control label {
+    font-weight: 500;
+}
+.form-control input[type=text],
+.form-control select,
+.form-control textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+}
+
+
+
+.form-control input[type=submit] {
+    background-color: #E68364;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+
+/******** ADD BICYCLE ********/
+
+.add-bicycle-section {
+    width: 30%;
+}
+
+
+/******** EDIT BICYCLE ********/
+
+.edit-bicycle-section {
+    width: 30%;
+}
+/******** DETAIL ********/
+
+section#detail-section {
+}
+
+ul.detail {
+    list-style: none;
+}
+
+ul.detail li {
+    margin:  15px 0;
+}
+
+ul.detail li div:first-child {
+    font-weight: bold;
+    display: inline-block;
+    width: 113px;
+
+}
+ul.detail li div:first-child::after {
+    content: ':';
+}
+ul.detail li div:last-child {
+
+    display: inline-block;
+}
+
+/******** INVENTORY ********/
+
+section.inventory-section .inventory-table {
+    width: 100%;
+    text-align: left;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.inventory-table th {
+    background-color: #aaa;
+    color: #fff;
+    font-weight: bold;
+}
+
+.inventory-table th, .inventory-table td {
+    padding: 5px;
+}
+
+/*************************
+        FOOTER
+**************************/
+
+footer#staff-footer {
+    background: #757D75;
+    padding: 3px;
+    font-size: 1.1rem;
+    bottom: 0;
+    width: 100%;
+}
+
+footer#staff-footer p {
+    text-align: center;
+}

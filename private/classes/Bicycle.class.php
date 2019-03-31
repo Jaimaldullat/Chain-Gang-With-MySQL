@@ -4,6 +4,7 @@ class Bicycle
 {
     // ----- START OF ACTIVE RECORD CODE -----
     static protected $database;
+    static protected $db_columns = ['id', 'brand', 'model', 'year', 'category', 'color', 'gender', 'price', 'weight_kg', 'condition_id', 'description'];
 
     static public function set_database($database)
     {
@@ -35,14 +36,15 @@ class Bicycle
         return self::find_by_sql($sql);
     }
 
-    static public function find_by_id($id){
+    // Find a single record ( Bicycle ) by id
+    static public function find_by_id($id)
+    {
         $sql = "SELECT * FROM bicycles";
         $sql .= " WHERE id = '" . self::$database->escape_string($id) . "'";
         $object_array = self::find_by_sql($sql);
-        if(!empty($object_array)) {
+        if (!empty($object_array)) {
             return array_shift($object_array);
-        }
-        else {
+        } else {
             return false;
         }
     }
@@ -62,7 +64,49 @@ class Bicycle
     }
 
 
-        // ----- END OF ACTIVE RECORD CODE -----
+    // Insert bicycle into database
+    public function create()
+    {
+        $attributes = $this->sanitized_attributes();
+        $sql = "INSERT INTO bicycles (";
+        $sql .= join(',',array_keys($attributes));
+        $sql .= ") VALUES ('";
+        $sql .= join("', '", array_values($attributes));
+        $sql .= "') ";
+        $result = self::$database->query($sql);
+        if ($result) {
+            $this->id = self::$database->insert_id;
+        }
+        return $result;
+    }
+
+
+    // Update bicycle record
+    public function update(){
+        $attributes = $this->sanitized_attributes();
+
+    }
+    // Properties which have database columns, excluding id
+    public function attributes()
+    {
+        $attributes = [];
+        foreach (self::$db_columns as $column) {
+            if($column == 'id') { continue; }
+            $attributes[$column] = $this->$column;
+        }
+        return $attributes;
+    }
+
+
+    // Sanitized properties have database columns, excluding id
+    protected function sanitized_attributes(){
+        $sanitized_attributes = [];
+        foreach ($this->attributes() as $key=>$value){
+            $sanitized_attributes[$key] = self::$database->escape_string($value);
+        }
+        return $sanitized_attributes;
+    }
+    // ----- END OF ACTIVE RECORD CODE -----
 
 
     public $id;
@@ -75,8 +119,8 @@ class Bicycle
     public $gender;
     public $price;
 
-    protected $weight_kg;
-    protected $condition_id;
+    public $weight_kg;
+    public $condition_id;
 
     const CATEGORIES = ['Road', 'Mountain', 'Hybrid', 'Crusier', 'City', 'BMX'];
     const GENDERS = ['Mens', 'Womens', 'Unisex'];
@@ -100,11 +144,12 @@ class Bicycle
         $this->description = $args['description'] ?? '';
         $this->gender = $args['gender'] ?? '';
         $this->price = $args['price'] ?? 0;
-        $this->weight_kg = $args['weight_kd'] ?? 0.0;
+        $this->weight_kg = $args['weight_kg'] ?? 0.0;
         $this->condition_id = $args['condition_id'] ?? 3;
     }
 
-    public function name(){
+    public function name()
+    {
         return "{$this->brand} {$this->model} {$this->year}";
     }
 

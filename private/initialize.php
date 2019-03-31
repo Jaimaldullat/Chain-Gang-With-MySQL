@@ -1,6 +1,6 @@
 <?php
 ob_start(); // Turn on output buffering
-
+session_start(); // Start session
 
 // Assign file paths to the PHP constants
 // __FILE__ returns the path of current file
@@ -21,6 +21,7 @@ $doc_root = substr($_SERVER['SCRIPT_NAME'], 0, $public_end);
 define('WWW_ROOT', $doc_root);
 
 require_once "functions.php";
+require_once('status_error_functions.php');
 require_once "db_credentials.php";
 require_once "database_functions.php";
 
