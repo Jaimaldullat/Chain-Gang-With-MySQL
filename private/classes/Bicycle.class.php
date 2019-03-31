@@ -5,6 +5,7 @@ class Bicycle
     // ----- START OF ACTIVE RECORD CODE -----
     static protected $database;
     static protected $db_columns = ['id', 'brand', 'model', 'year', 'category', 'color', 'gender', 'price', 'weight_kg', 'condition_id', 'description'];
+    public $errors = [];
 
     static public function set_database($database)
     {
@@ -63,13 +64,29 @@ class Bicycle
         return $object;
     }
 
+    // Validate fields
+    protected function validate()
+    {
+        $this->errors = [];
+        if (is_blank($this->brand)) {
+            $this->errors[] = "Brand cannot be blank.";
+        }
+        if (is_blank($this->model)) {
+            $this->errors[] = "Model cannot be blank.";
+        }
+        return $this->errors;
+    }
 
     // Insert bicycle into database
-    public function create()
+    protected function create()
     {
+        $this->validate();
+        if (!empty($this->errors)) {
+            return false;
+        }
         $attributes = $this->sanitized_attributes();
         $sql = "INSERT INTO bicycles (";
-        $sql .= join(',',array_keys($attributes));
+        $sql .= join(',', array_keys($attributes));
         $sql .= ") VALUES ('";
         $sql .= join("', '", array_values($attributes));
         $sql .= "') ";
@@ -82,36 +99,62 @@ class Bicycle
 
 
     // Update bicycle record
-    public function update(){
+    protected function update()
+    {
+        $this->validate();
+        if (!empty($this->errors)) {
+            return false;
+        }
         $attributes = $this->sanitized_attributes();
         $attributes_pair = [];
-        foreach ($attributes as $key=>$value){
+        foreach ($attributes as $key => $value) {
             $attributes_pair[] = "{$key}='{$value}'";
         }
 
         $sql = "UPDATE bicycles SET ";
-        $sql .= join(', ',$attributes_pair);
-        $sql .= " WHERE id='" . self::$database->escape_string($this->id) ."'";
+        $sql .= join(', ', $attributes_pair);
+        $sql .= " WHERE id='" . self::$database->escape_string($this->id) . "'";
         $sql .= " LIMIT 1";
         $result = self::$database->query($sql);
         return $result;
 
     }
 
-    public function save(){
+    public function save()
+    {
         // New record doesn't have id
-        if(isset($this->id)) {
+        if (isset($this->id) && $this->id != '') {
             return $this->update();
-        }else {
+        } else {
             return $this->create();
         }
     }
+
+    // Delete bicycle record from database
+    public function delete()
+    {
+        $sql = "DELETE FROM bicycles ";
+        $sql .= "WHERE id = '" . self::$database->escape_string($this->id) . "' ";
+        $sql .= "LIMIT 1";
+        $result = self::$database->query($sql);
+        return $result;
+
+        // After deleting, the instance of the object will still
+        // exist, even though the database record does not.
+        // This can be useful, as in:
+        //   echo $user->first_name . " was deleted.";
+        // but, for example, we can't call $user->update() after
+        // calling $user->delete().
+    }
+
     // Properties which have database columns, excluding id
     public function attributes()
     {
         $attributes = [];
         foreach (self::$db_columns as $column) {
-            if($column == 'id') { continue; }
+            if ($column == 'id') {
+                continue;
+            }
             $attributes[$column] = $this->$column;
         }
         return $attributes;
@@ -119,13 +162,15 @@ class Bicycle
 
 
     // Sanitized properties have database columns, excluding id
-    protected function sanitized_attributes(){
+    protected function sanitized_attributes()
+    {
         $sanitized_attributes = [];
-        foreach ($this->attributes() as $key=>$value){
+        foreach ($this->attributes() as $key => $value) {
             $sanitized_attributes[$key] = self::$database->escape_string($value);
         }
         return $sanitized_attributes;
     }
+
     // ----- END OF ACTIVE RECORD CODE -----
 
 

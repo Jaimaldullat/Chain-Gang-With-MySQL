@@ -6,12 +6,13 @@
 $id = $_GET['id'] ?? false;
 
 if(!$id) {
-    redirect_to("bicycles.php");
+    redirect_to(url_for("/staff/bicycles/index.php"));
 }
 // Find bicycle using ID
 $bike = Bicycle::find_by_id($id);
 if(!$bike) {
-    redirect_to("bicycles.php");
+
+    redirect_to(url_for("/staff/bicycles/index.php"));
 }
 
 ?>

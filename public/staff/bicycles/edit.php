@@ -37,6 +37,9 @@ if(is_post_request()){
             <a href="<?php echo url_for('/staff/bicycles/index.php'); ?>">&laquo; Back to List</a>
         </div>
         <h2>Edit Bicycle</h2>
+
+        <?php echo display_errors($bicycle->errors); ?>
+
         <article id="edit-bicycle-article">
             <section class="edit-bicycle-section">
                 <form method="post" action="<?php echo $_SERVER['PHP_SELF'] . "?id=" . $id; ?>">

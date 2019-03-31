@@ -4,6 +4,7 @@
 if(is_post_request()){
 
     $args = $_POST['bicycle'];
+
     $bicycle = new Bicycle($args);
     $result = $bicycle->save();
     if($result === true) {
@@ -28,6 +29,9 @@ if(is_post_request()){
             <a href="<?php echo url_for('/staff/bicycles/index.php'); ?>">&laquo; Back to List</a>
         </div>
         <h2>Add Bicycle</h2>
+
+        <?php echo display_errors($bicycle->errors); ?>
+
         <article id="add-bicycle-article">
             <section class="add-bicycle-section">
                 <form method="POST"  action="<?php echo $_SERVER['PHP_SELF']; ?>">

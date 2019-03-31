@@ -36,6 +36,15 @@ div#message {
     font-size: 1.2rem;
     color: green;
 }
+div.errors {
+    display: inline-block;
+    border: 1px solid red;
+    padding: 15px;
+    border-radius: 6px;
+    color: red;
+    margin-bottom: 10px;
+
+}
 /*************************
         HEADER
 **************************/

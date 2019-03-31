@@ -24,6 +24,7 @@ require_once "functions.php";
 require_once('status_error_functions.php');
 require_once "db_credentials.php";
 require_once "database_functions.php";
+require_once "validation_functions.php";
 
 // Load all the classes in a directory
 foreach (glob('classes/*.class.php') as $file) {
