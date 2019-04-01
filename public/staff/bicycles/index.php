@@ -10,7 +10,7 @@
         </div>
         <article id="inventory-article">
             <section class="inventory-section">
-                <table class="inventory-table">
+                <table class="inventory-table staff-table">
 
                     <tbody>
                     <tr>

@@ -29,7 +29,7 @@ if(is_post_request()){
 
 ?>
 
-<?php $page_title = "Add Bicycle" ?>
+<?php $page_title = "Edit Bicycle" ?>
 <?php include_once SHARED_PATH . "/staff_header.php"; ?>
 
     <main id="bicycles-main">
@@ -41,7 +41,7 @@ if(is_post_request()){
         <?php echo display_errors($bicycle->errors); ?>
 
         <article id="edit-bicycle-article">
-            <section class="edit-bicycle-section">
+            <section class="edit-bicycle-section edit-record-section">
                 <form method="post" action="<?php echo $_SERVER['PHP_SELF'] . "?id=" . $id; ?>">
 
                     <?php include_once "form_fields.php"; ?>
