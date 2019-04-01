@@ -32,13 +32,23 @@ class DatabaseObject
         return $object_array;
     }
 
+    // Count all Records
+    static public function count_all()
+    {
+        $sql = "SELECT COUNT(*) FROM " . static::$table_name;
+        $result_set = self::$database->query($sql);
+        $row = $result_set->fetch_array();
+        return array_shift($row);
+    }
+
+    // Find all Records
     static public function find_all()
     {
         $sql = "SELECT * FROM " . static::$table_name;
         return static::find_by_sql($sql);
     }
 
-    // Find a single record ( Bicycle ) by id
+    // Find a single record by id
     static public function find_by_id($id)
     {
         $sql = "SELECT * FROM " . static::$table_name . " ";

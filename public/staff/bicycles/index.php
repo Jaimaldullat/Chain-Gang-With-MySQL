@@ -2,6 +2,21 @@
 
 <?php require_login(); ?>
 
+<?php
+
+$current_page = $_GET['page'] ?? 1;
+$per_page = 2;
+$total_count = Bicycle::count_all();
+
+$pagination = New Pagination($current_page, $per_page, $total_count);
+
+$sql = "SELECT * FROM bicycles ";
+$sql .= "LIMIT {$per_page} ";
+$sql .= "OFFSET {$pagination->offset()} ";
+$bikes = Bicycle::find_by_sql($sql);
+
+//$bikes = Bicycle::find_all();
+?>
 <?php $page_title = "Bicycles" ?>
 <?php include_once SHARED_PATH . "/staff_header.php"; ?>
 
@@ -29,9 +44,6 @@
                         <th></th>
                         <th></th>
                     </tr>
-                    <?php
-                    $bikes = Bicycle::find_all();
-                    ?>
 
                     <?php foreach($bikes as $bike): ?>
                         <tr>
@@ -51,6 +63,10 @@
                     <?php endforeach; ?>
                     </tbody>
                 </table>
+                <?php
+                $url = url_for('/staff/bicycles/index.php');
+                echo $pagination->page_links($url);
+                ?>
             </section>
         </article>
     </main>

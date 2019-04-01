@@ -172,6 +172,18 @@ ul.detail li div:last-child {
     display: inline-block;
 }
 
+/******** COMMON PAGINATION ********/
+.pagination {
+    margin: 10px 0;
+}
+
+.pagination span {
+    font-weight: bold;
+}
+.pagination span,
+.pagination a {
+    padding: 5px;
+}
 /******** COMMON TABLE ********/
 
 table.staff-table {

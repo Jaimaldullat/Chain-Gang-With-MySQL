@@ -35,7 +35,7 @@ if(is_post_request()){
         <?php echo display_errors($bicycle->errors); ?>
 
         <article id="add-bicycle-article">
-            <section class="add-bicycle-section">
+            <section class="add-bicycle-section add-new-section">
                 <form method="POST"  action="<?php echo $_SERVER['PHP_SELF']; ?>">
 
                     <?php include_once "form_fields.php"; ?>
