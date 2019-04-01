@@ -23,7 +23,7 @@ $bikes = Bicycle::find_by_sql($sql);
     <main id="bicycles-main">
         <h2>Bicycles</h2>
         <div class="action">
-            <a href="<?php echo url_for('/staff/bicycles/new.php'); ?>">Add Bicycle</a>
+            <a href="<?php echo url_for('/staff/bicycles/new.php' . '?page=' . h(u($current_page))); ?>">Add Bicycle</a>
         </div>
         <article id="inventory-article">
             <section class="inventory-section">
@@ -56,9 +56,9 @@ $bikes = Bicycle::find_by_sql($sql);
                             <td><?php echo h($bike->weight_kg()); ?></td>
                             <td><?php echo h($bike->condition()); ?></td>
                             <td><?php echo h($bike->price); ?></td>
-                            <td><a href="<?php echo url_for('/staff/bicycles/show.php?id=' . h(u($bike->id)));  ?>">View</a> </td>
-                            <td><a href="<?php echo url_for('/staff/bicycles/edit.php?id=' . h(u($bike->id)));  ?>">Edit</a> </td>
-                            <td><a href="<?php echo url_for('/staff/bicycles/delete.php?id=' . h(u($bike->id)));  ?>">Delete</a> </td>
+                            <td><a href="<?php echo url_for('/staff/bicycles/show.php?id=' . h(u($bike->id))) . '&page=' . h(u($current_page));  ?>">View</a> </td>
+                            <td><a href="<?php echo url_for('/staff/bicycles/edit.php?id=' . h(u($bike->id))) . '&page=' . h(u($current_page));  ?>">Edit</a> </td>
+                            <td><a href="<?php echo url_for('/staff/bicycles/delete.php?id=' . h(u($bike->id))) . '&page=' . h(u($current_page));  ?>">Delete</a> </td>
                         </tr>
                     <?php endforeach; ?>
                     </tbody>

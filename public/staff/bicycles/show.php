@@ -8,6 +8,9 @@
 // Get requested ID
 $id = $_GET['id'] ?? false;
 
+
+$current_page = $_GET['page'] ?? 1;
+
 if(!$id) {
     redirect_to(url_for("/staff/bicycles/index.php"));
 }
@@ -26,7 +29,7 @@ if(!$bike) {
 <main id="detail-main">
 
     <div class="action">
-        <a href="<?php echo url_for('/staff/bicycles/index.php'); ?>">&laquo; Back to List</a>
+        <a href="<?php echo url_for('/staff/bicycles/index.php'). '?page=' . h(u($current_page)); ?>">&laquo; Back to List</a>
     </div>
     <h2>Bicycle Detail</h2>
 

@@ -3,6 +3,8 @@
 <?php require_login(); ?>
 
 <?php
+
+$current_page = $_GET['page'] ?? 1;
 if(is_post_request()){
 
     $args = $_POST['bicycle'];
@@ -28,7 +30,7 @@ if(is_post_request()){
 
     <main id="bicycles-main">
         <div class="action">
-            <a href="<?php echo url_for('/staff/bicycles/index.php'); ?>">&laquo; Back to List</a>
+            <a href="<?php echo url_for('/staff/bicycles/index.php'). '?page=' . h(u($current_page)); ?>">&laquo; Back to List</a>
         </div>
         <h2>Add Bicycle</h2>
 

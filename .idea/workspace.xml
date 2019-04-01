@@ -2,12 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="93049971-3a3d-4865-841e-691cdb5e3262" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/private/classes/Pagination.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/private/classes/DatabaseObject.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/private/classes/DatabaseObject.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/staff/bicycles/delete.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/staff/bicycles/delete.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/staff/bicycles/edit.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/staff/bicycles/edit.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/staff/bicycles/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/staff/bicycles/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/staff/bicycles/new.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/staff/bicycles/new.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/stylesheets/staff.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/stylesheets/staff.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/staff/bicycles/show.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/staff/bicycles/show.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -54,11 +53,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/staff/bicycles/new.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="703">
-              <caret line="37" column="63" selection-start-line="37" selection-start-column="63" selection-end-line="37" selection-end-column="63" />
+            <state relative-caret-position="380">
+              <caret line="32" column="100" selection-start-line="32" selection-start-column="100" selection-end-line="32" selection-end-column="100" />
             </state>
           </provider>
         </entry>
@@ -66,17 +65,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/staff/bicycles/delete.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="17" column="46" lean-forward="true" selection-start-line="17" selection-end-line="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/private/classes/Session.class.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="392">
-              <caret line="77" column="5" selection-start-line="77" selection-start-column="5" selection-end-line="77" selection-end-column="5" />
+            <state relative-caret-position="285">
+              <caret line="27" column="100" selection-start-line="27" selection-start-column="100" selection-end-line="27" selection-end-column="100" />
             </state>
           </provider>
         </entry>
@@ -85,7 +75,7 @@
         <entry file="file://$PROJECT_DIR$/public/staff/bicycles/edit.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="399">
-              <caret line="21" column="34" selection-start-line="21" selection-end-line="22" />
+              <caret line="39" column="100" selection-start-line="39" selection-start-column="100" selection-end-line="39" selection-end-column="100" />
             </state>
           </provider>
         </entry>
@@ -99,11 +89,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/staff/bicycles/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="416">
-              <caret line="68" column="18" selection-start-line="68" selection-start-column="18" selection-end-line="68" selection-end-column="18" />
+            <state relative-caret-position="304">
+              <caret line="25" column="70" selection-start-line="25" selection-start-column="70" selection-end-line="25" selection-end-column="70" />
             </state>
           </provider>
         </entry>
@@ -113,6 +103,15 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-2263">
               <caret line="39" selection-start-line="39" selection-end-line="39" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/staff/bicycles/show.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="361">
+              <caret line="31" column="96" selection-start-line="31" selection-start-column="64" selection-end-line="31" selection-end-column="96" />
             </state>
           </provider>
         </entry>
@@ -190,7 +189,6 @@
         <option value="$PROJECT_DIR$/private/initialize.php" />
         <option value="$PROJECT_DIR$/public/staff/logout.php" />
         <option value="$PROJECT_DIR$/public/staff/index.php" />
-        <option value="$PROJECT_DIR$/public/staff/bicycles/show.php" />
         <option value="$PROJECT_DIR$/public/staff/admins/index.php" />
         <option value="$PROJECT_DIR$/public/staff/admins/show.php" />
         <option value="$PROJECT_DIR$/private/shared/staff_header.php" />
@@ -199,14 +197,15 @@
         <option value="$PROJECT_DIR$/public/staff/admins/edit.php" />
         <option value="$PROJECT_DIR$/public/staff/admins/new.php" />
         <option value="$PROJECT_DIR$/public/staff/admins/delete.php" />
-        <option value="$PROJECT_DIR$/public/staff/bicycles/delete.php" />
-        <option value="$PROJECT_DIR$/public/staff/bicycles/edit.php" />
         <option value="$PROJECT_DIR$/private/status_error_functions.php" />
         <option value="$PROJECT_DIR$/private/classes/DatabaseObject.class.php" />
-        <option value="$PROJECT_DIR$/public/staff/bicycles/index.php" />
         <option value="$PROJECT_DIR$/private/classes/Pagination.class.php" />
         <option value="$PROJECT_DIR$/public/stylesheets/staff.css" />
+        <option value="$PROJECT_DIR$/public/staff/bicycles/show.php" />
         <option value="$PROJECT_DIR$/public/staff/bicycles/new.php" />
+        <option value="$PROJECT_DIR$/public/staff/bicycles/edit.php" />
+        <option value="$PROJECT_DIR$/public/staff/bicycles/delete.php" />
+        <option value="$PROJECT_DIR$/public/staff/bicycles/index.php" />
       </list>
     </option>
   </component>
@@ -322,12 +321,12 @@
       <workItem from="1553101996816" duration="14260000" />
       <workItem from="1553266943529" duration="27770000" />
       <workItem from="1553626044084" duration="15772000" />
-      <workItem from="1553707025490" duration="48589000" />
+      <workItem from="1553707025490" duration="49741000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="106391000" />
+    <option name="totallyTimeSpent" value="107543000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -495,13 +494,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/staff/bicycles/show.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/staff/admins/form_fields.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="418">
@@ -574,20 +566,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/staff/bicycles/delete.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="17" column="46" lean-forward="true" selection-start-line="17" selection-end-line="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/staff/bicycles/edit.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="21" column="34" selection-start-line="21" selection-end-line="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/private/classes/Session.class.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="392">
@@ -616,13 +594,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/staff/bicycles/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="68" column="18" selection-start-line="68" selection-start-column="18" selection-end-line="68" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/private/classes/Pagination.class.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -641,10 +612,38 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/public/staff/bicycles/show.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="31" column="96" selection-start-line="31" selection-start-column="64" selection-end-line="31" selection-end-column="96" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/public/staff/bicycles/new.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="703">
-          <caret line="37" column="63" selection-start-line="37" selection-start-column="63" selection-end-line="37" selection-end-column="63" />
+        <state relative-caret-position="380">
+          <caret line="32" column="100" selection-start-line="32" selection-start-column="100" selection-end-line="32" selection-end-column="100" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/staff/bicycles/edit.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="39" column="100" selection-start-line="39" selection-start-column="100" selection-end-line="39" selection-end-column="100" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/staff/bicycles/delete.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="27" column="100" selection-start-line="27" selection-start-column="100" selection-end-line="27" selection-end-column="100" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/staff/bicycles/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="25" column="70" selection-start-line="25" selection-start-column="70" selection-end-line="25" selection-end-column="70" />
         </state>
       </provider>
     </entry>

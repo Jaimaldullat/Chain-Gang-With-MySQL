@@ -6,6 +6,7 @@
     redirect_to('/staff/bicycles/index.php');
 }
 $id = $_GET['id'];
+$current_page = $_GET['page'] ?? 1;
 $bicycle = Bicycle::find_by_id($id);
 if($bicycle == false){
     redirect_to("/staff/bicycles/index.php");
@@ -36,7 +37,7 @@ if(is_post_request()){
 
     <main id="bicycles-main">
         <div class="action">
-            <a href="<?php echo url_for('/staff/bicycles/index.php'); ?>">&laquo; Back to List</a>
+            <a href="<?php echo url_for('/staff/bicycles/index.php'). '?page=' . h(u($current_page)); ?>">&laquo; Back to List</a>
         </div>
         <h2>Edit Bicycle</h2>
 
