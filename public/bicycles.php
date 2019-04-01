@@ -6,7 +6,7 @@
         <article id="inventory-article">
             <section class="intro-section">
                 <div class="intro-img">
-                    <img src="<?php echo url_for(u('/images/bicycle-thumb.jpeg')); ?>">
+                    <img src="<?php echo url_for('/images/bicycle-thumb.jpeg'); ?>">
                 </div>
                 <div class="intro-desc">
                     <h2 class="flex-item">Our Inventory of Used Bicycles</h2>
