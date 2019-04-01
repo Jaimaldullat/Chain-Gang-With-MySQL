@@ -16,7 +16,7 @@
                     cycling needs.</p>
             </section>
         </article>
-        <img class="about-big-image" src="<?php echo url_for(u('/images/about-big.jpeg')); ?>" alt="">
+        <img class="about-big-image" src="<?php echo url_for('/images/about-big.jpeg'); ?>" alt="">
 
         <!-- /#about-article -->
     </main>
