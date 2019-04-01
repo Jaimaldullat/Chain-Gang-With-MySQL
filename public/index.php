@@ -16,7 +16,7 @@
         </ul>
     </nav>
     <article id="main-image">
-        <img class="big-cycles-img" src="<?php echo url_for(u('/images/big-cycles.jpeg')); ?>" alt="Cycles Image">
+        <img class="big-cycles-img" src="<?php echo url_for('/images/big-cycles.jpeg'); ?>" alt="Cycles Image">
     </article>
 </main>
 
