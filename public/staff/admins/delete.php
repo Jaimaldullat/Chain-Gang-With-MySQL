@@ -1,5 +1,6 @@
 <?php require_once "../../../private/initialize.php"; ?>
 
+<?php require_login(); ?>
 
 <?php if(!isset($_GET['id'])){
     redirect_to('/staff/admins/index.php');
@@ -14,7 +15,7 @@ if(is_post_request()){
 
     // Delete bicycle
     $result = $admin->delete();
-    $_SESSION['message'] = 'The admin was deleted successfully.';
+    $session->message('The admin was deleted successfully.');
     redirect_to(url_for('/staff/admins/index.php'));
 }
 ?>

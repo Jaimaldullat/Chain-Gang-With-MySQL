@@ -1,5 +1,6 @@
 <?php require_once "../../../private/initialize.php"; ?>
 
+<?php require_login(); ?>
 
 <?php if(!isset($_GET['id'])){
     redirect_to('/staff/bicycles/index.php');
@@ -14,7 +15,7 @@ if(is_post_request()){
 
     // Delete bicycle
     $result = $bicycle->delete();
-    $_SESSION['message'] = 'The bicycle was deleted successfully.';
+    $session->message('The bicycle was deleted successfully.');
     redirect_to(url_for('/staff/bicycles/index.php'));
 }
 ?>

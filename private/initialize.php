@@ -1,6 +1,5 @@
 <?php
 ob_start(); // Turn on output buffering
-session_start(); // Start session
 
 // Assign file paths to the PHP constants
 // __FILE__ returns the path of current file
@@ -43,4 +42,5 @@ spl_autoload_register('my_autoload');
 $database = db_connect();
 DatabaseObject::set_database($database);
 
+$session = new Session();
 ?>

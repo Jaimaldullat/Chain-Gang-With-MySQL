@@ -1,5 +1,4 @@
 <?php require_once "../../private/initialize.php"; ?>
-
 <?php
 
 $errors = [];
@@ -24,6 +23,7 @@ if (is_post_request()) {
 
         if ($admin != false && $admin->verify_password($password)) {
             // logged in as admin
+            $session->login($admin);
             redirect_to(url_for("/staff/index.php"));
         } else {
             $errors[] = "Login was unsuccessful.";

@@ -1,5 +1,7 @@
 <?php require_once "../../private/initialize.php"; ?>
 
+<?php require_login(); ?>
+
 <?php $page_title = "Main Menu" ?>
 <?php include_once SHARED_PATH . "/staff_header.php"; ?>
 

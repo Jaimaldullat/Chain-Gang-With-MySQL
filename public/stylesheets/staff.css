@@ -70,6 +70,10 @@ nav#main-nav ul {
     text-align: center;
 }
 
+nav#main-nav ul li {
+    display: inline-block;
+    margin: 0 10px;
+}
 /*************************
         MAIN
 **************************/

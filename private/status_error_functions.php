@@ -1,5 +1,14 @@
 <?php
 
+function require_login() {
+    global $session;
+    if(!$session->is_logged_in()) {
+        redirect_to(url_for('/staff/login.php'));
+    } else {
+        // Do nothing, let the rest of the page proceed
+    }
+}
+
 // Display errors
 function display_errors($errors = []){
     $output = '';
@@ -16,20 +25,13 @@ function display_errors($errors = []){
     return $output;
 }
 
-// Store session value into variable and clear session for next use
-function get_and_clear_session_message(){
-    $msg = '';
-    if(isset($_SESSION['message']) && $_SESSION['message']!=''){
-        $msg = $_SESSION['message'];
-        unset($_SESSION['message']);
-    }
-    return $msg;
-}
 
 // Display session message
 function display_session_message(){
-    $msg = get_and_clear_session_message();
+    global $session;
+    $msg = $session->message();
     if($msg != ''){
+        $session->clear_message();
         return '<div id="message">' . h($msg) . '</div>';
     }
 }
